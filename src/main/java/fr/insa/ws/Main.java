@@ -1,5 +1,6 @@
 package fr.insa.ws;
 
+import fr.insa.ws.database.JDBC;
 import fr.insa.ws.model.Requester;
 
 import javax.xml.ws.Endpoint;
@@ -35,7 +36,7 @@ public class Main {
         Endpoint.publish(url, new TestServices());
     }
     public static void main(String[] args) throws MalformedURLException {
-
+        JDBC.connectToDB("voluntaryapp");
         new Main().demarrerServiceRequester();
         RequestersList = new ArrayList<>();
         System.out.println("Service RequesterServices has been launched !");

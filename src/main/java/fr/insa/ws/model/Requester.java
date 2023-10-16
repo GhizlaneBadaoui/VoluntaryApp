@@ -8,7 +8,7 @@ public class Requester {
     private String PhoneNumber;
     private String address;
     
-    public Requester(String name, String mail, String phoneNumber, String address) throws SQLException {
+    public Requester(String name, String mail, String phoneNumber, String address) {
         RequesterTable.addRequester(name,mail,phoneNumber,address);
         this.name = name;
         this.mail = mail;
@@ -19,15 +19,15 @@ public class Requester {
     public Requester() {
     }
 
-    public static void RemoveRequester(String mail) throws SQLException {
+    public static void RemoveRequester(String mail) {
         RequesterTable.deleteRequester(mail);
     }
 
-    public static void updateRequester(String mail, String name) throws SQLException {
+    public static void updateRequester(String mail, String name) {
         RequesterTable.updateRequester(mail,name);
     }
 
-    public static String getRequesterInfo(String mail) throws SQLException {
+    public static String getRequesterInfo(String mail) {
         return RequesterTable.getRequester(mail);
     }
 

@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class JDBC {
     public static Connection connection;
-    private static String DBServer = "jdbc:mysql://localhost:3306/";
+    private static String DBServer = "jdbc:mysql://127.0.0.1:3306/";
     private static String user = "root";
-    private static String password = "root";
+    private static String password = "rootwalid";
     public static String connectToDB(String databaseName){
         try {
             connection = DriverManager.getConnection(DBServer+databaseName,user,password);
@@ -15,10 +15,11 @@ public class JDBC {
             while (resultSet.next()){
                 System.out.println(resultSet.getString("requesterid")+" "+ resultSet.getString("name"));
             }
-            return "The connection has been successfully set up";
+            System.out.println("The connection has been successfully set up");
         }
         catch (SQLException e){
-            return "the connection has been failed";
+            System.out.println("the connection has been failed");
         }
+        return "";
     }
 }
