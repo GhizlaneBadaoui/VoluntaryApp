@@ -1,6 +1,5 @@
 package fr.insa.ws.model;
 
-import java.sql.SQLException;
 import java.util.Objects;
 
 public class Mission {
@@ -13,7 +12,7 @@ public class Mission {
     public enum Submitter{ requester, volunteer};
     private Submitter submitter;
 
-    public Mission(String submitterMail, String description, State state, Submitter submitter) throws SQLException {
+    public Mission(String submitterMail, String description, State state, Submitter submitter) {
         if(MissionTable.checkSubmitter(submitterMail,submitter)){
             if(submitter == Submitter.volunteer)
                 this.volunteerMail = submitterMail;
@@ -26,14 +25,14 @@ public class Mission {
         }
     }
 
-    public static void deleteMission(int id) throws SQLException {
+    public static void deleteMission(int id) {
         MissionTable.deleteMission(id);
     }
-    public static void updateStateMission(int id, State state) throws SQLException {
+    public static void updateStateMission(int id, State state) {
         MissionTable.updateState(id,state);
     }
 
-    public static String getMission(int id) throws SQLException {
+    public static String getMission(int id) {
         return MissionTable.getMission(id);
     }
 

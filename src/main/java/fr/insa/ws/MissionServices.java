@@ -15,19 +15,4 @@ public class MissionServices {
         Mission mission = new Mission(submitterMail, description, state, submitter);
         return mission;
     }
-/*
-    @WebMethod(operationName = "deleteMission")
-    public void deleteMission(@WebParam(name = "missionId") Integer missionId) throws SQLException {
-        Mission.deleteMission(missionId);
-    }
-
-    @WebMethod(operationName = "updateMissionState")
-    public void update(@WebParam(name = "missionId") Integer missionId, @WebParam(name = "state") Mission.State state) throws SQLException {
-        Mission.updateStateMission(missionId,state);
-    }
-
-    @WebMethod
-    public String getMission(@WebParam(name = "missionId") Integer missionId) throws SQLException {
-        return Mission.getMission(missionId);
-    }*/
 }

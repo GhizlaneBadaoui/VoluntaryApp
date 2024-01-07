@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class JDBC {
     public static Connection connection;
-    private static String DBServer = "jdbc:mysql://127.0.0.1:3306/";
+    private static String DBServer = "jdbc:mysql://localhost:3306/";
     private static String user = "root";
-    private static String password = "rootwalid";
+    private static String password = "root";
     public static String connectToDB(String databaseName){
         try {
             connection = DriverManager.getConnection(DBServer+databaseName,user,password);

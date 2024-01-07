@@ -14,7 +14,6 @@ public class Main {
     public static short port1 = 8089;
     public static short port2 = 8088;
     public static short port3 = 8087;
-    public static short port4 = 8086;
 
     public void demarrerServiceRequester() {
         String url = "http://"+host+":"+port1+"/";
@@ -26,25 +25,21 @@ public class Main {
         Endpoint.publish(url, new MissionServices());
     }
 
-    public void demarrerServiceTest() {
+    public void demarrerServiceVolunteer() {
         String url = "http://"+host+":"+port3+"/";
-        Endpoint.publish(url, new TestWS());
+        Endpoint.publish(url, new VolunteerServices());
     }
 
-    public void demarrerServiceTest2() {
-        String url = "http://"+host+":"+port4+"/";
-        Endpoint.publish(url, new TestServices());
-    }
     public static void main(String[] args) throws MalformedURLException {
         JDBC.connectToDB("voluntaryapp");
         new Main().demarrerServiceRequester();
         RequestersList = new ArrayList<>();
-        System.out.println("Service RequesterServices has been launched !");
+        System.out.println("RequesterServices has been launched !");
 
-        new Main().demarrerServiceTest();
-        System.out.println("Service TestWS has been launched !");
-
-        new Main().demarrerServiceTest2();
-        System.out.println("Service TestServices has been launched !");
+//        new Main().demarrerServiceMission();
+//        System.out.println("MissionServices has been launched !");
+//
+//        new Main().demarrerServiceVolunteer();
+//        System.out.println("VolunteerServices has been launched !");
     }
 }

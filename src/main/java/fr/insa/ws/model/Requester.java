@@ -1,7 +1,5 @@
 package fr.insa.ws.model;
 
-import java.sql.SQLException;
-
 public class Requester {
     private String name;
     private String mail;

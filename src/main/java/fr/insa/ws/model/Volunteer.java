@@ -8,7 +8,7 @@ public class Volunteer {
     private String PhoneNumber;
     private String address;
 
-    public Volunteer(String name, String mail, String phoneNumber, String address) throws SQLException {
+    public Volunteer(String name, String mail, String phoneNumber, String address) {
         VolunteerTable.addVolunteer(name,mail,phoneNumber,address);
         this.name = name;
         this.mail = mail;
@@ -16,15 +16,15 @@ public class Volunteer {
         this.address = address;
     }
 
-    public static void RemoveVolunteer(String mail) throws SQLException {
+    public static void RemoveVolunteer(String mail) {
         VolunteerTable.deleteVolunteer(mail);
     }
 
-    public static void updateVolunteer(String mail, String name) throws SQLException {
+    public static void updateVolunteer(String mail, String name) {
         VolunteerTable.updateVolunteer(mail,name);
     }
 
-    public static String getVolunteerInfo(String mail) throws SQLException {
+    public static String getVolunteerInfo(String mail) {
         return VolunteerTable.getVolunteer(mail);
     }
 

@@ -6,12 +6,12 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import java.sql.SQLException;
-
 @WebService(serviceName = "RequesterServices")
 public class RequesterServices {
     @WebMethod(operationName = "subscribe")
-    public Requester subscribe(@WebParam(name = "name") String name, @WebParam(name = "mail") String mail, @WebParam(name = "phoneNumber") String phoneNumber, @WebParam(name = "address")String address)  {
+    public Requester subscribe(@WebParam(name = "name") String name, @WebParam(name = "mail") String mail,
+                               @WebParam(name = "phoneNumber") String phoneNumber,
+                               @WebParam(name = "address")String address)  {
         return new Requester(name,mail,phoneNumber,address);
     }
 
